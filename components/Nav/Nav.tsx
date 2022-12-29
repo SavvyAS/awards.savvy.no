@@ -14,9 +14,7 @@ export const Nav = () => {
   const router = useRouter()
 
   const nav = [
-    { name: 'Kunder', slug: '/clients' },
-    { name: 'Selskapet', slug: '/agency' },
-    { name: 'Kontakt oss', slug: '/contact' }
+    { name: 'savvy.no', slug: '/clients' },
   ]
 
   return (
@@ -40,21 +38,11 @@ export const Nav = () => {
                 </Link>
               </div>
               <div className={styles.navbar__links}>
-                {nav.map((item) => {
-                  const isActive = item.slug === router.pathname
-                  return (
-                    <div key={item.slug} className={styles['link-wrapper']}>
-                      <Link href={item.slug} className={isActive ? '' : styles['hover-highlight']}>
-                        <span>{item.name}</span>
-                      </Link>
-                      {isActive && (
-                        <div className={styles['link-body']}>
-                          <Image src="/images/active-link.svg" alt="" width="140" height="42" />
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
+                <div className={styles['link-wrapper']}>
+                  <a href="https://savvy.no/" target="_blank" >
+                    <span>savvy.no</span>
+                  </a>
+                </div>
               </div>
               <button
                 className={styles['navbar__mobile-button']}
