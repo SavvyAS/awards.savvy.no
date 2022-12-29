@@ -16,8 +16,9 @@ export default function Index({title}: Props) {
   const { home } = content.pages as Pages
   return (
     <div>
-     <h1>{title}</h1>
       <h1>{home.heading}</h1>
+
+
     </div>
   )
 }
