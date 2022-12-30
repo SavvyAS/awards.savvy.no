@@ -1,93 +1,92 @@
-{ 
-    "pages": {
-        "home": {
-            "metaTitle": "Savvy | Hjem",
-            "metaDescription": "Velkommen til Savvy!",
-            "heading": "Savvy awards",
-            "ingress": "I Savvy er vi opptatt av å dele kunnskap, både internt og eksternt. Derfor har vi opprettet Savvy Awards - en konkurranse som strekker seg gjennom hele året, hvor man har mulighet for å vinne fine premier.",
-            "registerContribution": "Meld inn ditt bidrag",
-            "contributions": [
-                {
-                    "points:": "2p",
-                    "title": "Holde en intern presentasjon",
-                    "description": "Ønsker du å holde en intern presentasjon gir dette deg 2 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 2 poeng hver."
-                },
-                {
-                    "points:": "3p",
-                    "title": "Holde en ekstern presentasjon",
-                    "description": "Ønsker du å holde en ekstern presentasjon gir dette deg 3 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 3 poeng hver."
-                },
-                {
-                    "points:": "3p",
-                    "title": "Skrive en faglig artikkel",
-                    "description": "Ønsker du å skrive en faglig artikkel gir dette deg 3 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 3 poeng hver."
-                }
-            ],
-            "prices": {
-                "title:": "Premier",
-                "description": "Det vil bli utdelt fire kvartalspremier og én årspremie ila av et kalenderår. Vinneren av hvert kvartal trekkes etter endt periode. Årspremien blir trukket etter endt kalenderår og går til den personen som har opparbeidet seg flest poeng gjennom året.",
-                "yearEnd": {
-                    "imagePath": "/images/prices/london.png",
-                    "title": "Årspermie: ",
-                    "description": "Weekendtur til London"
-                },
-                "quarterly": [
-                    {
-                        "imagePath": "/images/prices/sonos.png",
-                        "title": "Kvartalspremie (Q1): ",
-                        "description": "Sonos Move"
-                    },
-                    {
-                        "imagePath": "/images/prices/airpods.png",
-                        "title": "Kvartalspremie (Q2): ",
-                        "description": "AirPods Pro 3"
-                    },
-                    {
-                        "imagePath": "",
-                        "title": "Kvartalspremie (Q3):: ",
-                        "description": "TBA"
-                    },
-                    {
-                        "imagePath": "",
-                        "title": "Kvartalspremie (Q4):: ",
-                        "description": "TBA"
-                    }
-                ]
-            },
-            "points": {
-                "title": "Poengoversikt",
-                "dropdownOptions": "Hele året",
-                "categories": {
-                    "internalPresentation": "Presentasjon internt",
-                    "externalPresentation": "Presentasjon eksternt",
-                    "article": "Faglig artikel"
-                },
-                "people": {
-                    "erlend.rekve": {
-                        "name": "Erlend Rekve",
-                        "image": "/images/people/erlend.png"
-                    },
-                    "hakon.kaurel": {
-                        "name": "Håkon Kaurel",
-                        "image": "/images/people/hakon.png"
-                    }
-                },
-                "item": [
-                    {
-                        "category": "internalPresentation",
-                        "contributor": "erlend.rekve",
-                        "date": "2022-12-27"
-                    }
-                ]
-            }
+{
+  "pages": {
+    "home": {
+      "metaTitle": "Savvy | Hjem",
+      "metaDescription": "Velkommen til Savvy!",
+      "heading": "Savvy awards",
+      "ingress": "I Savvy er vi opptatt av å dele kunnskap, både internt og eksternt. Derfor har vi opprettet Savvy Awards - en konkurranse som strekker seg gjennom hele året, hvor man har mulighet for å vinne fine premier.",
+      "registerContribution": "Meld inn ditt bidrag",
+      "contributions": [
+        {
+          "points": "2p",
+          "title": "Holde en intern presentasjon",
+          "description": "Ønsker du å holde en intern presentasjon gir dette deg 2 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 2 poeng hver."
+        },
+        {
+          "points": "3p",
+          "title": "Holde en ekstern presentasjon",
+          "description": "Ønsker du å holde en ekstern presentasjon gir dette deg 3 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 3 poeng hver."
+        },
+        {
+          "points": "3p",
+          "title": "Skrive en faglig artikkel",
+          "description": "Ønsker du å skrive en faglig artikkel gir dette deg 3 poeng. Samarbeider du med en eller flere kollega vil dere få utdelt 3 poeng hver."
         }
-    },
-    "globals": {
-        "footer": {
-            "address": "Lars Hilles gate 30",
-            "postal": "5008 Bergen",
-            "email": "hei@savvy.no",
-            "telephone": "+47 93 65 53 77"
-        }
+      ],
+      "prices": {
+        "title": "Premier",
+        "description": "Det vil bli utdelt fire kvartalspremier og én årspremie ila av et kalenderår. Vinneren av hvert kvartal trekkes etter endt periode. Årspremien blir trukket etter endt kalenderår og går til den personen som har opparbeidet seg flest poeng gjennom året.",
+        "yearEnd": {
+          "imagePath": "/images/prices/london.png",
+          "title": "Årspermie: ",
+          "description": "Weekendtur til London"
+        },
+        "quarterly": [
+          {
+            "imagePath": "/images/prices/sonos.png",
+            "title": "Kvartalspremie (Q1): ",
+            "description": "Sonos Move"
+          },
+          {
+            "imagePath": "/images/prices/airpods.png",
+            "title": "Kvartalspremie (Q2): ",
+            "description": "AirPods Pro 3"
+          },
+          {
+            "imagePath": "",
+            "title": "Kvartalspremie (Q3):: ",
+            "description": "TBA"
+          },
+          {
+            "imagePath": "",
+            "title": "Kvartalspremie (Q4):: ",
+            "description": "TBA"
+          }
+        ]
+      },
+      "points": {
+        "title": "Poengoversikt",
+        "categories": {
+          "internalPresentation": "Presentasjon internt",
+          "externalPresentation": "Presentasjon eksternt",
+          "article": "Faglig artikel"
+        },
+        "people": {
+          "erlend.rekve": {
+            "name": "Erlend Rekve",
+            "image": "/images/people/erlend.png"
+          },
+          "hakon.kaurel": {
+            "name": "Håkon Kaurel",
+            "image": "/images/people/hakon.png"
+          }
+        },
+        "items": [
+          {
+            "category": "internalPresentation",
+            "contributor": "erlend.rekve",
+            "date": "2022-12-27"
+          }
+        ]
+      }
     }
+  },
+  "globals": {
+    "footer": {
+      "address": "Lars Hilles gate 30",
+      "postal": "5008 Bergen",
+      "email": "hei@savvy.no",
+      "telephone": "+47 93 65 53 77"
+    }
+  }
 }

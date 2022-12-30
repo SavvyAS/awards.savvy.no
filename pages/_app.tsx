@@ -11,13 +11,12 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const { agency } = content.pages as Pages
 
   return (
     <Layout>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={agency.ingress}></meta>
+        <meta name="description" content=""></meta>
         <title>Savvy Awards</title>
       </Head>
       <Component {...pageProps} />
