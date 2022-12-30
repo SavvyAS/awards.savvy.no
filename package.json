@@ -9,7 +9,7 @@
     "build": "doppler run -- next build",
     "build:static": "next build && next export && next-export-optimize-images",
     "postbuild:static": "next-sitemap",
-    "doppler:setup": "doppler setup --project 'savvy-no' --config 'dev'"
+    "doppler:setup": "doppler setup --project 'savvy-awards' --config 'prd'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
