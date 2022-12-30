@@ -31,7 +31,7 @@ export default function Index({title}: Props) {
             <p>{home.prices.description}</p>
             <div className={styles.prices}>
                 <ul>
-                    <li className={styles.item}>
+                    <li key={home.prices.yearEnd.title} className={styles.item}>
                         <Image
                             src={home.prices.yearEnd.imagePath}
                             quality="100"
@@ -46,7 +46,7 @@ export default function Index({title}: Props) {
                     </li>
 
                     {home.prices.quarterly.map((x: PriceItem) =>
-                        <li className={styles.item}>
+                        <li key={x.title} className={styles.item}>
                             {x.imagePath ?
                                 <Image
                                     src={x.imagePath}
