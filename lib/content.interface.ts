@@ -16,9 +16,6 @@ export interface FooterContent {
 
 export interface Pages {
   home: Home
-  clients: Clients
-  agency: Agency
-  contact: Contact
 }
 
 export interface Home {
@@ -26,62 +23,27 @@ export interface Home {
   metaDescription: string
   heading: string
   ingress: string
-  clients: Client[]
+  registerContribution: string
+  contributions: { points: string, title: string, description: string}[]
+  prices: {
+    title: string,
+    description: string
+    yearEnd: PriceItem
+    quarterly: PriceItem[]
+  }
+  points: {
+    title: string
+    categories: any
+    people: any
+    items: {
+      category: string
+      contributor: string
+      date: string
+    }[]
+  }
 }
-
-export interface Clients {
-  metaTitle: string
-  metaDescription: string
-  heading: string
-  ingress: string
-  clients: Client[]
-}
-
-export interface Agency {
-  metaTitle: string
-  metaDescription: string
-  heading: string
-  ingress: string
-  text: string
-  guilty: Guilty
-  list: CoreValues
-  team: Employees[]
-}
-
-export interface Contact {
-  metaTitle: string
-  metaDescription: string
-  text: string
-}
-
-export interface Client {
-  logoPath: string
-  backgroundPath: string
-  name: string
-  text?: string
-  websiteUrl?: string
-}
-
-export interface Guilty {
-  heading: string
-  text: string
-  webpageUrl: string
-}
-
-export interface CoreValues {
-  heading: string
-  items: CoreValue[]
-}
-
-export interface CoreValue {
-  name: string
-  modalContent: string
-}
-
-export interface Employees {
-  imagePath: string
-  name: string
-  title: string
-  about: string
-  email: string
+export interface PriceItem {
+  imagePath: string,
+  title: string,
+  description: string
 }

@@ -6,7 +6,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div style={{ overflowX: 'hidden', width: '100%' }}>
       <Nav />
       <div className="content">{children}</div>
-      <Footer />
     </div>
   )
 }

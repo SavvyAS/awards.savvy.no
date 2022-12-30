@@ -1,0 +1,101 @@
+
+.container {
+
+  margin: auto;
+  max-width: 1024px;
+  padding: 6px;
+
+  h3 {
+    color: white;
+    margin-top: 32px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.send-contribution {
+  border: 1px solid #712CFF;
+  background: none;
+  padding: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;
+  text-decoration: none;
+  margin-bottom: 20px;
+
+  &:hover {
+    color: #712CFF;
+  }
+}
+
+.purple {
+  color: #712CFF;
+}
+
+.prices {
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    @media only screen and (min-width: 600px) {
+      grid-template-columns: repeat(auto-fit, 230px);
+    }
+    gap: 16px;
+    justify-content: center;
+
+    .placeholder {
+      width: 100%;
+      height: auto;
+      color: white;
+      background-color: #3d023f;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    li {
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+
+    li:first-child {
+      @media only screen and (min-width: 600px) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  }
+}
+
+
+.points {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    span:first-child {
+      padding: 16px;
+      background-color: #712CFF;
+      border-radius: 50%;
+      width: fit-content;
+    }
+
+    span:nth-child(2) {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

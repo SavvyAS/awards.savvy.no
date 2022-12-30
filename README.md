@@ -1,6 +1,6 @@
 # Savvy.no
 
-Source code for the Savvy.no website. 
+Source code for the awards.savvy.no website. 
 
 ## Getting Started
 
