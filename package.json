@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "setup": "yarn && yarn doppler:setup",
-    "dev": "doppler run -- next dev",
-    "start": "doppler run -- next start",
-    "build": "doppler run -- next build",
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build",
     "build:static": "next build && next export && next-export-optimize-images",
     "postbuild:static": "next-sitemap",
-    "doppler:setup": "doppler setup --project 'savvy-awards' --config 'prd'"
+    "doppler": "doppler setup --project 'savvy-awards' --config 'prd'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
