@@ -8,29 +8,29 @@ $color-primary-dark: #420cb1;
 $color-primary: #712cff;
 
 $colors: (
-    'background': #130013,
-    'background-light': #00000029,
-    'secondary': #fceafc,
-    'magenta': #e01de0,
-    'secondary-dark': #830a77,
-    'secondary-darker': #3d023f,
-    'primary-dark': #420cb1,
-    'primary': #712cff
+        'background': #130013,
+        'background-light': #00000029,
+        'secondary': #fceafc,
+        'magenta': #e01de0,
+        'secondary-dark': #830a77,
+        'secondary-darker': #3d023f,
+        'primary-dark': #420cb1,
+        'primary': #712cff
 );
 
 :export {
-    @each $key, $value in $colors {
-        #{unquote($key)}: $value;
-    }
+  @each $key, $value in $colors {
+    #{unquote($key)}: $value;
+  }
 }
 
 $breakpoints: (
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
 );
 
-$base-font-size: 16px;
+$base-font-size: 10px;
 $baseline-px: 20px;

@@ -56,12 +56,13 @@
       },
       "points": {
         "title": "Poengoversikt",
+        "totalScore": "Poeng",
         "categories": {
           "internalPresentation": "Presentasjon internt",
           "externalPresentation": "Presentasjon eksternt",
           "article": "Faglig artikel"
         },
-        "people": {
+        "contributors": {
           "erlend.rekve": {
             "name": "Erlend Rekve",
             "image": "/images/people/erlend.png"
@@ -71,10 +72,25 @@
             "image": "/images/people/hakon.png"
           }
         },
-        "items": [
+        "contributions": [
           {
             "category": "internalPresentation",
             "contributor": "erlend.rekve",
+            "date": "2022-12-27"
+          },
+          {
+            "category": "externalPresentation",
+            "contributor": "erlend.rekve",
+            "date": "2022-12-27"
+          },
+          {
+            "category": "article",
+            "contributor": "erlend.rekve",
+            "date": "2022-12-27"
+          },
+          {
+            "category": "article",
+            "contributor": "hakon.kaurel",
             "date": "2022-12-27"
           }
         ]
