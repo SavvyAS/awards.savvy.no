@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "build:static": "next build && next export && next-export-optimize-images",
+    "build:static": "next build && next export",
     "postbuild:static": "next-sitemap",
     "doppler": "doppler setup --project 'savvy-awards' --config 'prd'"
   },
@@ -20,11 +20,9 @@
     "@types/react-dom": "18.0.8",
     "clsx": "^1.2.1",
     "next": "latest",
-    "next-export-optimize-images": "^1.9.0",
     "next-sitemap": "^3.1.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scroll-parallax": "^3.3.2",
     "typescript": "4.8.4"
   },
   "devDependencies": {
