@@ -12,7 +12,7 @@ $content-margin: 25px;
     margin: 0 0 50px;
   }
 
-  h1, h2, ul {
+  h1, h2 {
     margin: 0 0 25px;
     padding: 0;
   }
@@ -34,6 +34,7 @@ $content-margin: 25px;
 
   ul {
     list-style-type: none;
+    padding: 0;
   }
 
   .purple {
@@ -158,19 +159,57 @@ $content-margin: 25px;
     }
   }
 
+  .scores-header {
+    margin-bottom: 25px;
+
+    @media only screen and (min-width: 770px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+
+    select {
+      background: none;
+      color: white;
+      border: none;
+      font-size: 2.2rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+  }
+
   .scores {
     font-size: 2.2rem;
 
     & > li {
-      background-color: #3D023F;
-
       &:first-child {
-        background-color: #712CFF;
+        .list-item-header {
+          background-color: #712CFF;
+        }
+
+        .list-item-description {
+          background-color: #6728E7;
+        }
       }
 
       &:not(:last-child) {
         margin-bottom: 16px;
       }
+    }
+
+    .list-item-header {
+      background-color: #3D023F;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .list-item-description {
+      background-color: #830a77;
     }
 
     .score-total {
@@ -200,6 +239,11 @@ $content-margin: 25px;
       display: none;
     }
 
+    .list-item-description {
+      padding: 32px 12px;
+
+    }
+
     .image {
       width: 110px;
       height: 110px;
@@ -218,11 +262,27 @@ $content-margin: 25px;
     }
   }
 
+  @media only screen and (max-width: 770px) {
+    .list-item-description {
+      span:first-child {
+        display: none;
+      }
+    }
+  }
 
   @media only screen and (min-width: 770px) {
-    .scores {
 
-      & > li {
+
+    .list-item-description {
+      display: grid;
+      grid-template-columns: 20% 1fr;
+
+      span:first-child {
+        justify-self: center;
+      }
+    }
+    .scores {
+      .list-item-header {
         display: grid;
         grid-template-columns: auto 1fr;
       }
@@ -234,6 +294,7 @@ $content-margin: 25px;
       }
     }
   }
+
 }
 
 

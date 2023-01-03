@@ -58,9 +58,45 @@
         "title": "Poengoversikt",
         "totalScore": "Poeng",
         "categories": {
-          "internalPresentation": "Presentasjon internt",
-          "externalPresentation": "Presentasjon eksternt",
-          "article": "Faglig artikel"
+          "internalPresentation": {
+            "name": "Presentasjon internt",
+            "points": 2
+          },
+          "externalPresentation": {
+            "name": "Presentasjon eksternt",
+            "points": 3
+          },
+          "article": {
+            "name": "Faglig artikel",
+            "points": 3
+          }
+        },
+        "filters": {
+          "2023": {
+            "title": "Hele året",
+            "start": "2023-01-01",
+            "end": "2023-12-31"
+          },
+          "2023-q1": {
+            "title": "1. Kvartal",
+            "start": "2023-01-01",
+            "end": "2023-03-31"
+          },
+          "2023-q2": {
+            "title": "2. Kvartal",
+            "start": "2023-04-01",
+            "end": "2023-06-30"
+          },
+          "2023-q3": {
+            "title": "3. Kvartal",
+            "start": "2023-07-01",
+            "end": "2023-09-30"
+          },
+          "2023-q4": {
+            "title": "4. Kvartal",
+            "start": "2023-10-01",
+            "end": "2023-12-31"
+          }
         },
         "contributors": {
           "erlend.rekve": {
@@ -75,23 +111,21 @@
         "contributions": [
           {
             "category": "internalPresentation",
+            "title": "Hvor dypt er havet? Et filosofisk blikk",
             "contributor": "erlend.rekve",
-            "date": "2022-12-27"
+            "date": "2023-02-14"
           },
           {
             "category": "externalPresentation",
+            "title": "Why we should all write webpages in Assembly",
             "contributor": "erlend.rekve",
-            "date": "2022-12-27"
+            "date": "2023-04-22"
           },
           {
             "category": "article",
-            "contributor": "erlend.rekve",
-            "date": "2022-12-27"
-          },
-          {
-            "category": "article",
+            "title": "Hvordan jeg ble en mandelbollefyr",
             "contributor": "hakon.kaurel",
-            "date": "2022-12-27"
+            "date": "2023-01-18"
           }
         ]
       }

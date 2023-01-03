@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLongArrowRight} from "@fortawesome/pro-regular-svg-icons";
 import Image from 'next/image'
 import {PriceItem} from "@/lib/content.interface";
+import {useEffect, useState} from "react";
 
 type Props = { title: string }
 
@@ -74,12 +75,7 @@ export default function Index({title}: Props) {
                 </div>
 
             </section>
-
-            <section>
-
-                <h2 className={styles.purple}>{home.points.title}</h2>
-                <ScoreBoard data={home.points}/>
-            </section>
+            <ScoreBoard data={home.points}/>
 
             <section className={styles.footer}>
                 ©2021. All Rights Reserved
@@ -92,10 +88,25 @@ const ScoreBoard = ({data}: any) => {
 
     const {contributors, contributions, categories} = data;
 
+    const [filter, setFilter] = useState("2023");
+    const [filteredContributions, setFilteredContributions] = useState<any[]>([]);
+
+    useEffect(() => {
+        const startDate = new Date(data.filters[filter].start);
+        const endDate = new Date(data.filters[filter].end);
+        console.log(startDate, endDate)
+        const c = contributions.filter((c: any) => {
+            const date = new Date(c.date);
+            return date >= startDate && date <= endDate;
+        })
+        setFilteredContributions(c);
+    }, [filter])
+
     const format = (contributions: any) => {
         let combined_contributions = contributions.reduce((current: any, contribution: any) => {
             let contributor = current[contribution.contributor] ?? {};
-            contributor.totalScore = contributor.totalScore ? contributor.totalScore + 1 : 1;
+            let points = categories[contribution.category]?.points ?? 0;
+            contributor.totalScore = contributor.totalScore ? contributor.totalScore + points : points;
             contributor[contribution.category] = contributor[contribution.category] ? contributor[contribution.category] + 1 : 1;
             return {...current, [contribution.contributor]: contributor}
         }, {})
@@ -110,41 +121,85 @@ const ScoreBoard = ({data}: any) => {
     }
 
     return (
-        <ul className={styles.scores}>
-            {format(contributions).map((x, i) =>
-                <li key={x.id}>
-                    <div className={styles["score-total"]}>
-                        <span>{i + 1}</span>
-                        <figure className={styles.image}>
-                            <Image
-                                src={x.image}
-                                quality="100"
-                                width={100}
-                                height={100}
-                                alt={`Bilde av ${x.name}`}
-                            />
-                        </figure>
-                        <span className={styles["content-block"]}>
-                            <span>{x.name}</span>
-                            <span>{`${x.scores.totalScore ?? "-"} ${data.totalScore}`}</span>
-                        </span>
-                    </div>
-                    <ul className={styles["score-details"]}>
-                        <li className={styles["content-block"]}>
-                            <span>{categories.internalPresentation}</span>
-                            <span>{x.scores.internalPresentation ?? "-"}</span>
-                        </li>
-                        <li className={styles["content-block"]}>
-                            <span>{categories.externalPresentation}</span>
-                            <span>{x.scores.externalPresentation ?? "-"}</span>
-                        </li>
-                        <li className={styles["content-block"]}>
-                            <span>{categories.article}</span>
-                            <span>{x.scores.article ?? "-"}</span>
-                        </li>
+        <section>
+            <div className={styles["scores-header"]}>
+                <h2 className={styles.purple}>{data.title}</h2>
+
+                <select className={styles["filter-select"]} value={filter} onChange={e => setFilter(e.target.value)}>
+                    {Object.keys(data.filters).map(filter =>
+                        <option key={filter} value={filter}>
+                            {data.filters[filter].title}
+                        </option>
+                    )}
+                </select>
+            </div>
+
+            <ul className={styles.scores}>
+                {format(filteredContributions).map((x, i) =>
+                    <li key={x.id}>
+                        <ScoreBoardListItem
+                            categories={categories}
+                            position={i + 1}
+                            contributor={x}
+                            contributions={filteredContributions.filter(y => y.contributor === x.id)}/>
+                    </li>
+                )}
+            </ul>
+        </section>
+    )
+}
+
+const ScoreBoardListItem = ({categories, contributor, contributions, position}: any) => {
+
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <div className={styles["list-item-header"]} onClick={() => setOpen(!open)}>
+                <div className={styles["score-total"]}>
+                    <span>{position}</span>
+                    <figure className={styles.image}>
+                        <Image
+                            src={contributor.image}
+                            quality="100"
+                            width={100}
+                            height={100}
+                            alt={`Bilde av ${contributor.name}`}
+                        />
+                    </figure>
+                    <span className={styles["content-block"]}>
+                    <span>{contributor.name}</span>
+                    <span>{`${contributor.scores.totalScore ?? "-"} Poeng`}</span>
+                </span>
+                </div>
+                <ul className={styles["score-details"]}>
+                    <li className={styles["content-block"]}>
+                        <span>{categories.internalPresentation.name}</span>
+                        <span>{contributor.scores.internalPresentation ?? "-"}</span>
+                    </li>
+                    <li className={styles["content-block"]}>
+                        <span>{categories.externalPresentation.name}</span>
+                        <span>{contributor.scores.externalPresentation ?? "-"}</span>
+                    </li>
+                    <li className={styles["content-block"]}>
+                        <span>{categories.article.name}</span>
+                        <span>{contributor.scores.article ?? "-"}</span>
+                    </li>
+                </ul>
+            </div>
+            {
+                open &&
+                <div className={styles["list-item-description"]}>
+                    <span>Mine bidrag:</span>
+                    <ul>
+                        {contributions.map((x: any) =>
+                            <li key={JSON.stringify(x)}>
+                                {x.title} ({categories[x.category].points}p)
+                            </li>
+                        )}
                     </ul>
-                </li>
-            )}
-        </ul>
+                </div>
+            }
+        </>
     )
 }
