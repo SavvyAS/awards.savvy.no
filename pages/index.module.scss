@@ -184,11 +184,9 @@ $content-margin: 25px;
   .scores {
     font-size: 2.2rem;
 
-    .list-item-header {
-      border-radius: 10px;
-    }
-
     & > li {
+      border-radius: 10px;
+      overflow: hidden;
       &:first-child {
         .list-item-header {
           background-color: #712CFF;
