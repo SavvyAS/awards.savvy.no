@@ -78,7 +78,7 @@ export default function Index({title}: Props) {
             <ScoreBoard data={home.points}/>
 
             <section className={styles.footer}>
-                ©2021. All Rights Reserved
+                ©2023. All Rights Reserved
             </section>
         </main>
     )
