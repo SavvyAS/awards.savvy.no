@@ -109,24 +109,6 @@
           }
         },
         "contributions": [
-          {
-            "category": "internalPresentation",
-            "title": "Hvor dypt er havet? Et filosofisk blikk",
-            "contributor": "erlend.rekve",
-            "date": "2023-02-14"
-          },
-          {
-            "category": "externalPresentation",
-            "title": "Why we should all write webpages in Assembly",
-            "contributor": "erlend.rekve",
-            "date": "2023-04-22"
-          },
-          {
-            "category": "article",
-            "title": "Hvordan jeg ble en mandelbollefyr",
-            "contributor": "hakon.kaurel",
-            "date": "2023-01-18"
-          }
         ]
       }
     }
