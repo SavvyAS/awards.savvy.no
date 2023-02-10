@@ -24,7 +24,7 @@ export interface Home {
   heading: string
   ingress: string
   registerContribution: string
-  contributions: { points: string, title: string, description: string}[]
+  contributions: { points: string, title: string, description: string }[]
   prices: {
     title: string,
     description: string

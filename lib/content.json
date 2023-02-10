@@ -106,9 +106,34 @@
           "hakon.kaurel": {
             "name": "Håkon Kaurel",
             "image": "/images/people/hakon.png"
+          },
+          "torstein.winjum": {
+            "name": "Torstein Winjum",
+            "image": "/images/people/people-placeholder-wide.svg"
           }
         },
         "contributions": [
+          {
+            "category": "internalPresentation",
+            "title": "Mission possible: Innringer",
+            "contributor": "erlend.rekve",
+            "date": "2023-02-09",
+            "collaboration": true
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Unleashing the Power of AI: Navigating the World of Machine Learning",
+            "contributor": "erlend.rekve",
+            "date": "2023-02-09",
+            "collaboration": false
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Mission possible: Innringer",
+            "contributor": "torstein.winjum",
+            "date": "2023-02-09",
+            "collaboration": true
+          }
         ]
       }
     }

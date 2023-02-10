@@ -1,15 +1,15 @@
 import content from '@/lib/content.json'
 import styles from './index.module.scss';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faLongArrowRight} from "@fortawesome/pro-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowRight } from "@fortawesome/pro-regular-svg-icons";
 import Image from 'next/image'
-import {PriceItem} from "@/lib/content.interface";
-import {useEffect, useState} from "react";
+import { PriceItem } from "@/lib/content.interface";
+import { useEffect, useState } from "react";
 
 type Props = { title: string }
 
-export default function Index({title}: Props) {
-    const {home} = content.pages as any
+export default function Index({ title }: Props) {
+    const { home } = content.pages as any
     return (
         <main className={styles.container}>
             <section>
@@ -18,7 +18,7 @@ export default function Index({title}: Props) {
                 <p>{home.ingress}</p>
                 <a href="mailto:hakon@savvy.no">
                     {home.registerContribution}
-                    <FontAwesomeIcon icon={faLongArrowRight}/>
+                    <FontAwesomeIcon icon={faLongArrowRight} />
                 </a>
             </section>
             <section>
@@ -48,9 +48,9 @@ export default function Index({title}: Props) {
                             alt="Bilde av Big Ben"
                         />
                         <span>
-                        {home.prices.yearEnd.title}
+                            {home.prices.yearEnd.title}
                             <span className={styles.purple}>{home.prices.yearEnd.description}</span>
-                    </span>
+                        </span>
                     </div>
                     <ul>
                         {home.prices.quarterly.map((x: PriceItem) =>
@@ -66,16 +66,16 @@ export default function Index({title}: Props) {
                                     <span className={styles.placeholder}>?</span>
                                 }
                                 <span>
-                                {x.title}
+                                    {x.title}
                                     <span className={styles.purple}>{x.description}</span>
-                            </span>
+                                </span>
                             </li>
                         )}
                     </ul>
                 </div>
 
             </section>
-            <ScoreBoard data={home.points}/>
+            <ScoreBoard data={home.points} />
 
             <section className={styles.footer}>
                 ©2023. All Rights Reserved
@@ -84,9 +84,9 @@ export default function Index({title}: Props) {
     )
 }
 
-const ScoreBoard = ({data}: any) => {
+const ScoreBoard = ({ data }: any) => {
 
-    const {contributors, contributions, categories} = data;
+    const { contributors, contributions, categories } = data;
 
     const [filter, setFilter] = useState("2023");
     const [filteredContributions, setFilteredContributions] = useState<any[]>([]);
@@ -94,7 +94,6 @@ const ScoreBoard = ({data}: any) => {
     useEffect(() => {
         const startDate = new Date(data.filters[filter].start);
         const endDate = new Date(data.filters[filter].end);
-        console.log(startDate, endDate)
         const c = contributions.filter((c: any) => {
             const date = new Date(c.date);
             return date >= startDate && date <= endDate;
@@ -105,18 +104,18 @@ const ScoreBoard = ({data}: any) => {
     const format = (contributions: any) => {
         let combined_contributions = contributions.reduce((current: any, contribution: any) => {
             let contributor = current[contribution.contributor] ?? {};
-            let points = categories[contribution.category]?.points ?? 0;
+            let points = (categories[contribution.category]?.points ?? 0) + (contribution.collaboration ? 1 : false);
             contributor.totalScore = contributor.totalScore ? contributor.totalScore + points : points;
             contributor[contribution.category] = contributor[contribution.category] ? contributor[contribution.category] + 1 : 1;
-            return {...current, [contribution.contributor]: contributor}
+            return { ...current, [contribution.contributor]: contributor }
         }, {})
 
         return Object.keys(combined_contributions).map(x => ({
-                id: x,
-                name: contributors[x].name,
-                image: contributors[x].image,
-                scores: {...combined_contributions[x]}
-            }
+            id: x,
+            name: contributors[x].name,
+            image: contributors[x].image,
+            scores: { ...combined_contributions[x] }
+        }
         )).sort((a, b) => b.scores.totalScore - a.scores.totalScore);
     }
 
@@ -141,7 +140,7 @@ const ScoreBoard = ({data}: any) => {
                             categories={categories}
                             position={i + 1}
                             contributor={x}
-                            contributions={filteredContributions.filter(y => y.contributor === x.id)}/>
+                            contributions={filteredContributions.filter(y => y.contributor === x.id)} />
                     </li>
                 )}
             </ul>
@@ -149,7 +148,7 @@ const ScoreBoard = ({data}: any) => {
     )
 }
 
-const ScoreBoardListItem = ({categories, contributor, contributions, position}: any) => {
+const ScoreBoardListItem = ({ categories, contributor, contributions, position }: any) => {
 
     const [open, setOpen] = useState(false);
 
@@ -168,9 +167,9 @@ const ScoreBoardListItem = ({categories, contributor, contributions, position}: 
                         />
                     </figure>
                     <span className={styles["content-block"]}>
-                    <span>{contributor.name}</span>
-                    <span>{`${contributor.scores.totalScore ?? "-"} Poeng`}</span>
-                </span>
+                        <span>{contributor.name}</span>
+                        <span>{`${contributor.scores.totalScore ?? "-"} Poeng`}</span>
+                    </span>
                 </div>
                 <ul className={styles["score-details"]}>
                     <li className={styles["content-block"]}>
@@ -194,7 +193,7 @@ const ScoreBoardListItem = ({categories, contributor, contributions, position}: 
                     <ul>
                         {contributions.map((x: any) =>
                             <li key={JSON.stringify(x)}>
-                                {x.title} ({categories[x.category].points}p)
+                                {x.title} ({categories[x.category].points + (x.collaboration ? 1 : 0)}p)
                             </li>
                         )}
                     </ul>
