@@ -162,7 +162,7 @@
           },
           {
             "category": "internalPresentation",
-            "title": "Retry av SignalR",
+            "title": "Ikke prøv igjen",
             "contributor": "hakon.trandal",
             "date": "2023-04-20",
             "collaboration": false
