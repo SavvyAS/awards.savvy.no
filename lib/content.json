@@ -107,8 +107,20 @@
             "name": "Håkon Kaurel",
             "image": "/images/people/hakon.png"
           },
+          "hakon.trandal": {
+            "name": "Håkon Trandal",
+            "image": "/images/people/trandal.png"
+          },
           "torstein.winjum": {
             "name": "Torstein Winjum",
+            "image": "/images/people/people-placeholder-wide.svg"
+          },
+          "sindre.braaten": {
+            "name": "Sindre Braaten",
+            "image": "/images/people/sindre.png"
+          },
+          "ole": {
+            "name": "Ole Eskild Steensen",
             "image": "/images/people/people-placeholder-wide.svg"
           }
         },
@@ -133,6 +145,41 @@
             "contributor": "torstein.winjum",
             "date": "2023-02-09",
             "collaboration": true
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Hvordan jeg blokkerte salg av togbilletter i hele Norge",
+            "contributor": "hakon.kaurel",
+            "date": "2023-04-20",
+            "collaboration": false
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Blod på tak",
+            "contributor": "erlend.rekve",
+            "date": "2023-04-20",
+            "collaboration": false
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Retry av SignalR",
+            "contributor": "hakon.trandal",
+            "date": "2023-04-20",
+            "collaboration": false
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Utsending av SMS",
+            "contributor": "sindre.braaten",
+            "date": "2023-04-20",
+            "collaboration": false
+          },
+          {
+            "category": "internalPresentation",
+            "title": "Watt i All Verden ⚡",
+            "contributor": "ole",
+            "date": "2023-04-20",
+            "collaboration": false
           }
         ]
       }
