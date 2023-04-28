@@ -169,7 +169,7 @@
           },
           {
             "category": "internalPresentation",
-            "title": "Utsending av SMS",
+            "title": "10 Seconds from disaster with over eager retry",
             "contributor": "sindre.braaten",
             "date": "2023-04-20",
             "collaboration": false
